@@ -35,8 +35,8 @@ function getLocation() {
 }
 function showPosition(position) {
 	var date = new Date(); // today
-	var times = prayTimes.getTimes(date, [position.coords.latitude, position.coords.longitude], 'auto', 'auto', '12h' );
-	times.setMethod ('Jakim') ;
+	var PT = new PrayTimes('Jakim');
+	var times =  PT.getTimes(date, [position.coords.latitude, position.coords.longitude], 'auto', 'auto', '12h' );
 	var list = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
 
 	var dateobj = new Date();
